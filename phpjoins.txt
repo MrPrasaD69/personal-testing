@@ -1,0 +1,461 @@
+
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+// Check this connection 
+
+if ($conn->connect_error) { 
+
+  die("Connection failed: " . $conn->connect_error); 
+} 
+//insert records into table 
+
+$sql  = "INSERT INTO student_address VALUES (1,'sravan kumar','kakumanu');"; 
+
+$sql .= "INSERT INTO student_address VALUES (2,'bobby','kakumanu');"; 
+
+$sql .= "INSERT INTO student_address  VALUES (3,'ojaswi','hyderabad');"; 
+
+$sql .= "INSERT INTO student_address  VALUES (4,'rohith','hyderabad');"; 
+
+$sql .= "INSERT INTO student_address  VALUES (5,'gnanesh','hyderabad');"; 
+
+  
+
+if ($conn->multi_query($sql) === TRUE) { 
+
+  echo "data stored successfully"; 
+
+} else { 
+
+  echo "Error: " . $sql . "<br>" . $conn->error; 
+} 
+
+  
+
+$conn->close(); 
+?>
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+// Check this connection 
+
+if ($conn->connect_error) { 
+
+  die("Connection failed: " . $conn->connect_error); 
+} 
+//insert records into table 
+
+$sql  = "INSERT INTO student_address VALUES (1,'sravan kumar','kakumanu');"; 
+
+$sql .= "INSERT INTO student_address VALUES (2,'bobby','kakumanu');"; 
+
+$sql .= "INSERT INTO student_address  VALUES (3,'ojaswi','hyderabad');"; 
+
+$sql .= "INSERT INTO student_address  VALUES (4,'rohith','hyderabad');"; 
+
+$sql .= "INSERT INTO student_address  VALUES (5,'gnanesh','hyderabad');"; 
+
+  
+
+if ($conn->multi_query($sql) === TRUE) { 
+
+  echo "data stored successfully"; 
+
+} else { 
+
+  echo "Error: " . $sql . "<br>" . $conn->error; 
+} 
+
+  
+
+$conn->close(); 
+?>
+
+
+
+
+
+
+
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+// Check this connection 
+
+if ($conn->connect_error) { 
+
+  die("Connection failed: " . $conn->connect_error); 
+} 
+//insert records into table 
+
+$sql  = "INSERT INTO student_marks VALUES (1,98,99);"; 
+
+$sql .= "INSERT INTO student_marks VALUES (2,78,89);"; 
+
+$sql .= "INSERT INTO student_marks  VALUES (3,78,98);"; 
+
+$sql .= "INSERT INTO student_marks  VALUES (4,89,98);"; 
+
+$sql .= "INSERT INTO student_marks  VALUES (7,89,79);"; 
+
+  
+
+if ($conn->multi_query($sql) === TRUE) { 
+
+  echo "data stored successfully"; 
+
+} else { 
+
+  echo "Error: " . $sql . "<br>" . $conn->error; 
+} 
+
+  
+
+$conn->close(); 
+?>
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+// Check this connection 
+
+if ($conn->connect_error) { 
+
+  die("Connection failed: " . $conn->connect_error); 
+} 
+//insert records into table 
+
+$sql  = "INSERT INTO student_marks VALUES (1,98,99);"; 
+
+$sql .= "INSERT INTO student_marks VALUES (2,78,89);"; 
+
+$sql .= "INSERT INTO student_marks  VALUES (3,78,98);"; 
+
+$sql .= "INSERT INTO student_marks  VALUES (4,89,98);"; 
+
+$sql .= "INSERT INTO student_marks  VALUES (7,89,79);"; 
+
+  
+
+if ($conn->multi_query($sql) === TRUE) { 
+
+  echo "data stored successfully"; 
+
+} else { 
+
+  echo "Error: " . $sql . "<br>" . $conn->error; 
+} 
+
+  
+
+$conn->close(); 
+?>
+
+
+
+
+
+
+<html> 
+<body> 
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+
+echo "inner join on student_address: "; 
+
+echo "<br>"; 
+
+echo "<br>"; 
+//sql query to display all student_address table based on student id using  inner join 
+
+$sql = "SELECT  * from student_address INNER JOIN student_marks on student_address.sid=student_marks.sid"; 
+
+$result = $conn->query($sql); 
+//display data on web page 
+
+while($row = mysqli_fetch_array($result)){ 
+
+    echo " STUDENT-ID : ". $row['sid'], " ----- NAME : ". $row['sname'] ," ----- ADDRESS : ". $row['saddress'] ; 
+
+    echo "<br>"; 
+
+      
+} 
+
+  
+
+echo "<br>"; 
+
+echo "inner join on student_marks: "; 
+
+echo "<br>"; 
+
+echo "<br>"; 
+//sql query to display all student_marks  table based on student id using  inner join 
+
+$sql1 = "SELECT  * from student_marks INNER JOIN student_address on student_address.sid=student_marks.sid"; 
+
+$result1 = $conn->query($sql1); 
+//display data on web page 
+
+while($row = mysqli_fetch_array($result1)){ 
+
+    echo " STUDENT-ID : ". $row['sid'], " ----- SUBJECT 1 : ". $row['subject1'] ," ----- SUBJECT 2 : ". $row['subject2'] ; 
+
+    echo "<br>"; 
+
+      
+} 
+
+  
+
+  
+//close the connection 
+
+  
+
+$conn->close(); 
+?> 
+</body> 
+</html>
+<html> 
+<body> 
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+
+echo "inner join on student_address: "; 
+
+echo "<br>"; 
+
+echo "<br>"; 
+//sql query to display all student_address table based on student id using  inner join 
+
+$sql = "SELECT  * from student_address INNER JOIN student_marks on student_address.sid=student_marks.sid"; 
+
+$result = $conn->query($sql); 
+//display data on web page 
+
+while($row = mysqli_fetch_array($result)){ 
+
+    echo " STUDENT-ID : ". $row['sid'], " ----- NAME : ". $row['sname'] ," ----- ADDRESS : ". $row['saddress'] ; 
+
+    echo "<br>"; 
+
+      
+} 
+
+  
+
+echo "<br>"; 
+
+echo "inner join on student_marks: "; 
+
+echo "<br>"; 
+
+echo "<br>"; 
+//sql query to display all student_marks  table based on student id using  inner join 
+
+$sql1 = "SELECT  * from student_marks INNER JOIN student_address on student_address.sid=student_marks.sid"; 
+
+$result1 = $conn->query($sql1); 
+//display data on web page 
+
+while($row = mysqli_fetch_array($result1)){ 
+
+    echo " STUDENT-ID : ". $row['sid'], " ----- SUBJECT 1 : ". $row['subject1'] ," ----- SUBJECT 2 : ". $row['subject2'] ; 
+
+    echo "<br>"; 
+
+      
+} 
+
+  
+
+  
+//close the connection 
+
+  
+
+$conn->close(); 
+?> 
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+<html> 
+<body> 
+<?php 
+//servername 
+
+$servername = "localhost"; 
+//username 
+
+$username = "root"; 
+//empty password 
+
+$password = ""; 
+//database is the database name 
+
+$dbname = "database"; 
+
+  
+// Create connection by passing these connection parameters 
+
+$conn = new mysqli($servername, $username, $password, $dbname); 
+
+echo "right join on student_address: "; 
+
+echo "<br>"; 
+
+echo "<br>"; 
+//sql query to display all student_address table based on student id using  right join 
+
+$sql = "SELECT  * from student_address RIGHT JOIN student_marks on student_address.sid=student_marks.sid"; 
+
+$result = $conn->query($sql); 
+//display data on web page 
+
+while($row = mysqli_fetch_array($result)){ 
+
+    echo " STUDENT-ID : ". $row['sid'], " ----- NAME : ". $row['sname'] ," ----- ADDRESS : ". $row['saddress'] ; 
+
+    echo "<br>"; 
+
+      
+} 
+
+  
+
+echo "<br>"; 
+
+echo "right  join on student_marks: "; 
+
+echo "<br>"; 
+
+echo "<br>"; 
+//sql query to display all student_marks  table based on student id using right join 
+
+$sql1 = "SELECT  * from student_marks RIGHT JOIN student_address on student_address.sid=student_marks.sid"; 
+
+$result1 = $conn->query($sql1); 
+//display data on web page 
+
+while($row = mysqli_fetch_array($result1)){ 
+
+    echo " STUDENT-ID : ". $row['sid'], " ----- SUBJECT 1 : ". $row['subject1'] ," ----- SUBJECT 2 : ". $row['subject2'] ; 
+
+    echo "<br>"; 
+
+      
+} 
+
+  
+
+  
+//close the connection 
+
+  
+
+$conn->close(); 
+?> 
+</body> 
+</html>
