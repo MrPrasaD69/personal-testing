@@ -1,7 +1,9 @@
 <?php
 
 include('dbcon.php');
+include('index.php');
 session_start();
+$log= false;
 
 
 $con = mysqli_connect('localhost','root','');
@@ -28,10 +30,16 @@ if($num==1)
 	$_SESSION['username']= $name;
         echo "Log in success";
         header('location:index.php');
+       $log= true;
+        
+
 }
 else
 {
     echo '<script>alert("Invalid Credentials")</script>';
 }
+
+
+
 
 ?>
