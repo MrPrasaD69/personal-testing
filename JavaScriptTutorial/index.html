@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Tutorial</title>
+</head>
+<body>
+	<h2 id="label">Hello World</h2>
+	<script>
+		// Console printing types
+		console.log('Hello World');
+		// alert('Click me');
+		// document.write("Document");
+		console.warn("warning msg");
+		console.error("error msg");
+		
+		// Data Types
+		var num1=10;
+		var num2=20;
+		document.write("Value is:  ",num1+num2);
+
+		var marks={
+			ravi:10, suresh:20
+		}
+		console.log(marks);
+
+		var a=true;
+	    var b=false;
+		console.log(b);
+		var c;
+		console.log(c);
+		var n=null;
+		console.log(n);
+
+		// 2 types of datatypes
+		// Primitive and reference
+		var arr=[1,2,3,4,5];
+		console.log(arr);
+
+		// Operators in JS
+		var x=10;
+		var y=20;
+		var z=x+y;
+		console.log(true && true);	
+
+		// functions in JS
+		function avg(num1 , num2){
+			return (num1+num2)/2;
+		}
+		num3=avg(10,6);
+		console.log(num3);
+		
+		// var age= window.prompt("Enter Your Age");
+		// alert("Your age is "+age);
+		// if(age>=18)
+		// {
+		// 	alert("You are an Adult");
+		// }
+		// else{
+		// 	alert("You are not an Adult");	
+		// }
+
+		// for loop
+		// var arr1=[1,2,3,4,5,6,7,"Hello"];
+		// for(var i=0;i<arr1.length;i++)
+		// {
+		// 	console.log(arr1[i]);
+		// }
+
+		// arr1.forEach(function(element){
+		// 	console.log(element);
+		// })
+
+		let j=0;
+		const ac=0;
+		console.log(ac);
+		// ac= ac+1
+
+		// while(j<arr1.length){
+		// 	console.log(arr1[j]);
+		// 	j++;
+		// }
+
+		// let myarr=[1,2,3,"name", true];
+		// // myarr.pop();
+		// // myarr.push("prasad");
+		// myarr.unshift("prasad");
+		// console.log(myarr);
+
+		let str="this is a string";
+		console.log(str);
+		// console.log(str.indexOf("this"));
+		console.log(str.slice(1,10));
+
+		let mydate= new Date();
+		console.log(mydate);
+		console.log(mydate.getTime());
+		console.log(mydate.getDay());
+		console.log(mydate.getFullYear());
+
+		
+		// document.getElementById('clickme').style.border='blue';
+
+		select=document.querySelector('h2');
+		console.log(select);
+
+		// Events in JS
+		function clicked(){
+			// console.log("Button works");
+			alert("Button works");
+		}
+
+		window.onload=function(){
+			console.log("document loaded");
+		}
+
+		//event listener
+		// label.addEventListener('click', function(){
+		// 	console.log("clicked label");
+		// })
+
+		//for mouse hover
+		// label.addEventListener('mouseover', function(){
+		// 	console.log("mouse on label");
+		// })
+
+		// label.addEventListener('click', function(){
+		// 	document.querySelectorAll('label')[0].innerText="label changed";
+		// 	// console.log("clicked label");
+		// })
+
+		//Arrow functions
+			// normal func 
+			// function sum1(a,b)
+			// {
+			// 	return a+b;
+			// }
+		//arrow func
+		sum1= (a,b)=>{
+			return a+b;
+		}
+
+		//Set Timeout and Interval
+		log=()=>{
+			console.log("This is a log");
+		}
+		// setTimeout(log,2000);
+		   // setInterval(log,2000);
+		   //clearInterval/Timeout(variable id)
+
+		 
+		 //JSON
+		 obj ={name:"harry", a:{phone:'hash'}}
+		 js=JSON.stringify(obj);
+		 console.log(js);
+
+		 test=34;
+		 console.log(`this is a number: ${test} `);
+
+	</script>
+
+
+		<div class="container">
+			<div id="firstcontainer">
+				<button id="clickme" onclick="clicked()" >Click</button>
+			</div>
+		</div>
+</body>
+</html>
