@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body { font-family: Arial;font-size: 10pt; }
+        table { border: 1px solid #ccc; }
+        table th { background-color: #F7F7F7;color: #333;font-weight: bold; }
+        table th, table td { padding: 5px;border-color: #ccc; }
+    </style>
+
+
+    <script type="text/javascript">
+        function myFunction() {
+            var input, filter, table, tr, td, i, j, cellValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                if (td) {
+                    for (j = 0; j < td.length; j++) {
+                        cellValue = td[j].textContent || td[j].innerText;
+                        if (cellValue.trim().toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                            break;
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+
+
+        //dropdown selection function
+        function SelectedTextValue(ele) {
+            if (ele.selectedIndex > 0) {
+                var selectedText = ele.options[ele.selectedIndex].innerHTML;
+                var selectedValue = ele.value;
+                document.getElementById("myInput").value = selectedText;
+            }
+            else {
+                document.getElementById("myInput").value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- dropdown to select values -->
+    <select name="ddlContent" id="ddlContent" onchange="SelectedTextValue(this)">
+        <option value="Nothing">select</option>
+        <option value="1">John Hammond</option>
+        <option value="2">Mudassar Khan</option>
+        <option value="3">Suzanne Mathews</option>
+        <option value="4">Robert Schidner</option>
+    </select>
+
+    <input type="text" id="myInput" />
+    <input type="button" value="Search" onclick="myFunction()" />
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>John Hammond</td>
+            <td>United States</td>
+        </tr>
+        <tr>
+            <td>Mudassar Khan</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>Suzanne Mathews</td>
+            <td>France</td>
+        </tr>
+        <tr>
+            <td>Robert Schidner</td>
+            <td>Russia</td>
+        </tr>
+    </table>
+</body>
+</html>
