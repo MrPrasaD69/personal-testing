@@ -31,6 +31,9 @@
 			font-size: 20px;
 			text-shadow: 1px 1px white;
 		}
+		#image{
+			margin-top: 10px;
+		}
 	</style>
 <body>
 	<div class="container">
@@ -38,6 +41,7 @@
 			<div class="col-md-2">
 			</div>
 			<div class="col-md-8">
+				<button id="cleartextbox" onclick="cleartext()">Clear</button>
 				<input type="text" id="txtbox" placeholder="Enter Value 1">	
 				<input type="text" id="txtbox1" placeholder="Enter Value 2">
 				<button class="btn btn-warning" onClick="textname()">SHOW INPUT</button>
@@ -118,12 +122,19 @@
 			var a=document.getElementById("image").style.display="initial";			
 		}
 
-
+		//clear output box
 		function clearbox(){
 				var a=document.getElementById("txtlbl").innerText="";	
 		}
 
 
+		//clear input textboxes
+		function cleartext(){
+			//alert('working');
+			var a =document.getElementById("txtbox").value="";
+			var b =document.getElementById("txtbox1").value="";
+
+		}
 	</script>
 </body>
 </html>
