@@ -71,43 +71,67 @@
 		function clickMe(){
 			alert("YOU CLICKED!");
 		}
+
+		//show input value
 		function textname(){
 			var a=document.getElementById("txtbox").value;
 			var b=document.getElementById("txtbox1").value;		
 
+			if(a=="" || b=="")
+			{
+				alert('Please enter both Values');
+			}
+			else{
 			var l =document.getElementById("txtlbl").innerText="Your Input is : "+a+" and "+b;			
-			
+			}
 		}
 
+		//sum of input values
 		function sum(){
 
 			var a=document.getElementById("txtbox").value;
 			var b=document.getElementById("txtbox1").value;
 			
-			if(isNaN(a) || isNaN(b))
+			if(a=="" || b=="")
 			{
-				alert('Currently we are only adding two numbers');
-			}
-			else{
-			result = parseInt(a) + parseInt(b);
-			var l =document.getElementById("txtlbl").innerText="Sum is : " +result;								
+				alert('Please enter both Values');
+			}	
+			else
+			{
+				if(isNaN(a) || isNaN(b))
+				{
+					alert('Currently we are only adding two numbers');
+				}
+				else{
+				result = parseInt(a) + parseInt(b);
+				var l =document.getElementById("txtlbl").innerText="Sum is : " +result;								
+				}
 			}
 		}
 
+		//compare two input values
 		function compare(){
 			var a=document.getElementById("txtbox").value;
 			var b=document.getElementById("txtbox1").value;
-			if(isNaN(a) || isNaN(b))
+
+			if(a=="" || b=="")
 			{
-				alert('Currently we are only comparing two numbers')
+				alert('Please enter both Values');
 			}
-			else{
-				if(parseInt(a)>parseInt(b))
+			else
+			{
+				if(isNaN(a) || isNaN(b))
 				{
-					var l =document.getElementById("txtlbl").innerText=a+" is greater than "+b;					
+					alert('Currently we are only comparing two numbers')
 				}
 				else{
-					var l =document.getElementById("txtlbl").innerText=b+" is greater than "+a;						
+					if(parseInt(a)>parseInt(b))
+					{
+						var l =document.getElementById("txtlbl").innerText=a+" is greater than "+b;					
+					}
+					else{
+						var l =document.getElementById("txtlbl").innerText=b+" is greater than "+a;						
+					}
 				}
 			}
 		}
