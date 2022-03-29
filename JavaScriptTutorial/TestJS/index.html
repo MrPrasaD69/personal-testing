@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TESTING JS FUNCTION</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@200;300&display=swap" rel="stylesheet">
+</head>
+	<style>
+		#txtbox, #txtbox1{
+			margin: 10px;
+		}
+		.container{
+			background-color: lightgreen;
+		}
+		body{
+			
+			font-family: 'Oswald', sans-serif;
+		}
+		#txtlbl{
+			font-size: 20px;
+			text-shadow: 1px 1px white;
+		}
+	</style>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<input type="text" id="txtbox" placeholder="Enter Value 1">	
+				<input type="text" id="txtbox1" placeholder="Enter Value 2">
+				<button class="btn btn-warning" onClick="textname()">SHOW INPUT</button>
+				<button class="btn btn-info" onClick="sum()">ADD</button>
+				<button class="btn btn-primary" onClick="compare()">COMPARE</button>			
+			</div>
+			<div class="col-md-2">
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label id="txtlbl"></label>				
+				<button class="btn btn-info" id="clearbtn" onclick="clearbox()">CLEAR</button>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<img src="D:img1.jpg" width="300px" height="200px" id="image">
+				<button class="btn btn-primary" id="btn1" onclick="hide()">HIDE IMAGE</button>
+				<button class="btn btn-primary" id="btn2" onclick="show()">SHOW IMAGE</button>
+			</div>	
+		</div>				
+	</div>
+
+	<div></div>
+	<script>
+		function clickMe(){
+			alert("YOU CLICKED!");
+		}
+		function textname(){
+			var a=document.getElementById("txtbox").value;
+			var b=document.getElementById("txtbox1").value;		
+
+			var l =document.getElementById("txtlbl").innerText="Your Input is : "+a+" and "+b;			
+			
+		}
+
+		function sum(){
+
+			var a=document.getElementById("txtbox").value;
+			var b=document.getElementById("txtbox1").value;
+			
+			if(isNaN(a) || isNaN(b))
+			{
+				alert('Currently we are only adding two numbers');
+			}
+			else{
+			result = parseInt(a) + parseInt(b);
+			var l =document.getElementById("txtlbl").innerText="Sum is : " +result;								
+			}
+		}
+
+		function compare(){
+			var a=document.getElementById("txtbox").value;
+			var b=document.getElementById("txtbox1").value;
+			if(isNaN(a) || isNaN(b))
+			{
+				alert('Currently we are only comparing two numbers')
+			}
+			else{
+				if(a>b)
+				{
+					var l =document.getElementById("txtlbl").innerText=a+" is greater than "+b;					
+				}
+				else{
+					var l =document.getElementById("txtlbl").innerText=b+" is greater than "+a;						
+				}
+			}
+		}
+
+
+		//HIDE AND SHOW IMAGE FUNCTION
+		function hide(){
+			var a=document.getElementById("image").style.display="none";
+		}
+
+		function show(){
+			var a=document.getElementById("image").style.display="initial";			
+		}
+
+
+		function clearbox(){
+				var a=document.getElementById("txtlbl").innerText="";	
+		}
+
+
+	</script>
+</body>
+</html>
