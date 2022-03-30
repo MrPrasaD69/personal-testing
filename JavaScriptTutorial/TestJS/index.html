@@ -62,7 +62,6 @@
 		<div class="row">
 			<div class="col-md-12">
 				<label id="txtlbl"></label>				
-				<button class="btn btn-info" id="clearbtn" onclick="clearbox()">CLEAR</button>
 			</div>	
 		</div>
 		<div class="row">
@@ -155,17 +154,14 @@
 			var a=document.getElementById("image").style.display="initial";			
 		}
 
-		//clear output box
-		function clearbox(){
-				var a=document.getElementById("txtlbl").innerText="";	
-		}
-
+	
 
 		//clear input textboxes
 		function cleartext(){
 			//alert('working');
 			var a =document.getElementById("txtbox").value="";
 			var b =document.getElementById("txtbox1").value="";
+			var c=document.getElementById("txtlbl").innerText="";
 
 		}
 
