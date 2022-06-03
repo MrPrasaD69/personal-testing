@@ -1,0 +1,25 @@
+
+<html>
+    <head>
+        <title>TEST</title>
+    </head>
+    <body></body>
+</html>
+
+
+
+<script>
+
+const items=[
+ {name:"Prasad", price:100},
+ {name:"Nobita", price:19},
+ {name:"Doraemon", price:10},
+ {name:"Shizuka", price:20}
+]
+const totalPrice= items.reduce((total, item)=>{
+    return total + item.price;
+},0)
+
+
+console.log(totalPrice);
+</script>
