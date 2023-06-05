@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h2 id="foo">Initial Content</h2>
+        <button id="showNewButton" onclick="changeContent()">Change Content</button>
+        <button id="showPreviousButton" style="display: none;" onclick="showPreviousContent();">Show Previous</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var first=document.getElementById("foo").innerHTML;
+    //Simple ajax function
+    function changeContent() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("foo").innerHTML = this.responseText;
+                document.getElementById("showPreviousButton").style.display = "inline";
+            }
+        };
+        xhttp.open("GET", "content.txt", true);
+        xhttp.send();
+    }
+
+showPreviousContent=()=>{
+    document.getElementById("foo").innerHTML = first;
+    
+}
+</script>
